@@ -1,19 +1,18 @@
 class Storage {
-    constructor(items) {
-        this.items = items;
+    #items;
+    constructor(returnedItems) {
+        this.#items = returnedItems;
     }
-    // getItems() {
-    //     return this.items;
-    // };
-    getItems = () => this.items;
-    // addItem(newItem) {
-    //     return this.items.push(newItem);
-    // };
-    addItem = (newItem) => this.items.push(newItem);
+    getItems() {
+        return this.#items;
+    };
+    addItem(newItem) {
+    return this.#items.push(newItem);
+    };
     removeItem(itemToRemove) {
-        const indexToRemove = this.items.indexOf(itemToRemove);
+        const indexToRemove = this.#items.indexOf(itemToRemove);
         if (indexToRemove !== -1) {
-            this.items.splice(indexToRemove, 1);
+            this.#items.splice(indexToRemove, 1);
         };
     }
 }
